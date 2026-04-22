@@ -158,9 +158,9 @@ def load_transport_network(csv_filepath):
         edge_type = edge_attrs.get('edge_type', 'straight')
         edge_color = edge_attrs.get('edge_color', 'gray')
         curve_side = edge_attrs.get('curve_side', 'right')
-        curve_smoothness = edge_attrs.get('curve_smoothness', 100)
-        curve_bulge = edge_attrs.get('curve_bulge', 0.2)
-        linewidth = edge_attrs.get('linewidth', 3.0)
+        curve_smoothness = int(float(edge_attrs.get('curve_smoothness', 100)))
+        curve_bulge = float(edge_attrs.get('curve_bulge', 0.2))
+        linewidth = float(edge_attrs.get('linewidth', 3.0))
 
         dist_km = edge_attrs.get('distance_km', 0)
         distance_km_label = f"{dist_km:2.2f}" if not pd.isna(dist_km) else ''
